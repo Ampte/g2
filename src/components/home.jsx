@@ -34,7 +34,7 @@ const Home = () => {
             </div>
             <div className='sidebar'>
                 <div className='logo'>
-                <h3>Ches Thrift</h3>
+                <h1>Ches Thrift</h1>
                 <button className='xmark' onClick={close}>
                 <i class="fa-solid fa-xmark"style={{
                     fontSize:'large'
