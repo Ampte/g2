@@ -17,7 +17,7 @@
   height: 100vh;
   background-color: gray;
   color: white;
-  width: 50%;
+  width: 70%;
 }
 .search{
   grid-area: search;
