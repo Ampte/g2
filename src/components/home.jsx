@@ -37,7 +37,7 @@ const Home = () => {
                 <h1>Ches Thrift</h1>
                 <button className='xmark' onClick={close}>
                 <i class="fa-solid fa-xmark"style={{
-                    fontSize:'large'
+                    fontSize:'30px'
                 }}></i>
                 </button>
                 </div>
