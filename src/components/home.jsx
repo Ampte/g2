@@ -28,8 +28,8 @@ const Home = () => {
             </div>
             <div className='search'>
                 <form>
-                    <input type='text' className='search-value' placeholder='Search...'/>
-                    <button type='submit'>Search</button>
+                    <input type='text' className='search-value' placeholder='Search...' required/>
+                    <button type='submit' className='search-btn'>Search</button>
                 </form>
             </div>
             <div className='sidebar'>
