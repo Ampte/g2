@@ -1,42 +1,120 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+*{
+  margin: 0;
+}
+.home{
+  display: grid;
+  gap: 10px;
+  grid-template-areas: "header header"
+  "nav-link nav-link"
+  "search search"
+  "main main"
+  "footer footer";
+}
+.sidebar{
+  display: none;
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  background-color: gray;
+  color: white;
+  width: 50%;
+}
+.search{
+  grid-area: search;
+  margin: 10px;
+}
+form{
+  display: flex;
+}
+.search-value{
+  width: 100%;
+  padding: 10px;
+  font-size: large;
+}
+.header{
+  grid-area: header;
+  background-color: black;
+  color:  white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.bar{
+  background-color: black;
+  color: white;
+  border: none;
+}
+.bar:hover{
+  background-color: lightgrey;
+  color: black;
+}
+.user-circle{
+  background-color: black;
+  color: white;
+  border: none;
+}
+.main{
+  grid-area: main;
+  padding: 10px;
+  margin: 10px;
+}
+.footer{
+  grid-area: footer;
+  padding: 10px;
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.product-image{
+  width: 100%;
+  height: auto;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.product-card{
+  display: flex;
+  justify-content: space-evenly;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.card{
+  border: 1px solid lightgrey;
+  padding: 10px;
+  margin: 10px;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.links{
+  text-align: center;
+  gap: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-top: 100px;
+  padding: 10px;
+  font-size: large;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.logo{
+  display: flex;
+  justify-content: space-between;
 }
-
-.card {
-  padding: 2em;
+.footer{
+  background-color: gray;
+  color: white;
 }
-
-.read-the-docs {
-  color: #888;
+.xmark{
+  background-color: gray;
+  color: white;
+  border: none;
+}
+.xmark:hover{
+  background-color: red;
+  color: black;
+}
+.home-btn{
+  padding: 10px;
+}
+.catego-btn{
+  padding: 10px;
+}
+.fav-btn{
+  padding: 10px;
+}
+.exchange-btn{
+  padding: 10px;
+}
+.order-btn{
+  padding: 10px;
 }
