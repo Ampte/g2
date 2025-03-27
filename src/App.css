@@ -36,6 +36,7 @@ form{
   border-radius: 0 20px 20px 0;
   background-color: lightgreen;
   border: 1px solid lightgrey;
+  font-size: large;
 }
 .header{
   grid-area: header;
