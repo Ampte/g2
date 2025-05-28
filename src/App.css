@@ -44,7 +44,6 @@
 }
 
 .translate{
-  font-size: large;
   padding: 10px;
   border-radius: 20px;
   margin: 20px;
@@ -53,7 +52,6 @@
 }
 
 .dokbadale-seani{
-  font-size: large;
   padding: 10px;
   border-radius: 20px;
   margin: 20px;
@@ -62,12 +60,9 @@
 }
 
 .katta-jikse{
-  font-size: large;
   padding: 10px;
   border-radius: 20px;
   margin: 20px;
-  margin-left: 50px;
-  margin-right: 50px;
   background-color: lightgrey;
   text-align: center;
 }
