@@ -107,8 +107,7 @@ form{
 
 .textDiv{
   text-align: right;
-  font-size: large;
-  margin-left: 200px;
+  margin-left: 100px;
   margin-right: 10px;
   padding: 10px;
   background-color: lightgrey;
@@ -116,7 +115,6 @@ form{
 }
 
 .responseDiv{
-  font-size: large;
   margin: 10px;
   padding: 10px;
   background-color: lightgrey;
