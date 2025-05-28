@@ -1,59 +1,108 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '/src/App.css'
-import Card from './card';
 
 const Home = () => {
 
-    const open = () => {
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.style.display = 'block';
-    };
+    const [text, setText] = useState('');
 
-    const close = () => {
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.style.display = 'none';
-    };
+    const handleChange = (e) => {
+        setText(e.target.value);
+    }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const greetDiv = document.querySelector(".greet");
+        greetDiv.style.display = 'none';
+        const transDiv = document.querySelector(".translate");
+        transDiv.style.display = 'none';
+
+        const dokDiv = document.querySelector(".dokbadale-seani");
+        dokDiv.style.display = 'none';
+
+        const jikse = document.querySelector(".katta-jikse");
+        jikse.style.display = 'none';
+
+        const chatBox = document.querySelector(".chat-box");
+
+        const textDiv = document.createElement("div");
+        textDiv.className = 'textDiv';
+        textDiv.innerHTML = text;
+
+        const responseDiv = document.createElement("div");
+        responseDiv.className = 'responseDiv';
+        responseDiv.innerHTML = "Getting data.."
+        
+        chatBox.appendChild(textDiv);
+        chatBox.appendChild(responseDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        setTimeout(() => {
+            responseDiv.innerHTML = text;
+            setResponse(text);
+        }, 2000);
+
+    }
+
+    const clearItem = () => {
+        const greetDiv = document.querySelector(".greet");
+        greetDiv.style.display = 'block';
+        const transDiv = document.querySelector(".translate");
+        transDiv.style.display = 'block';
+
+        const dokDiv = document.querySelector(".dokbadale-seani");
+        dokDiv.style.display = 'block';
+
+        const jikse = document.querySelector(".katta-jikse");
+        jikse.style.display = 'block';
+
+        const responseDiv = document.querySelector(".responseDiv");
+        responseDiv.style.display = 'none';
+
+        const chatBox = document.querySelector(".chat-box");
+        chatBox.style.display = 'none';
+
+    }
     return(
         <>
-        <div className='home'>
+        <div className='body'>
+            <div className='left-side-content'></div>
+            <div className='right-side-content'></div>
+            <div className='center-content'>
             <div className='header'>
-                <button className='bar' onClick={open}><i class="fa-solid fa-bars-staggered" style={{fontSize: 'large'}}></i></button>
-                <h1>Ches Thrift</h1>
-                <button className='user-circle'>
-                <i class="fa-solid fa-circle-user" style={{
-                    fontSize: '30px'
-                }}></i>
-                </button>
-            </div>
-            <div className='search'>
-                <form>
-                    <input type='text' className='search-value' placeholder='Search...' required/>
-                    <button type='submit' className='search-btn'>Search</button>
-                </form>
-            </div>
-            <div className='sidebar'>
+                <div className='menu'>
+                    <button className='menu-btn'>|||</button>
+                </div>
                 <div className='logo'>
-                <h1>Ches Thrift</h1>
-                <button className='xmark' onClick={close}>
-                <i class="fa-solid fa-xmark"style={{
-                    fontSize:'30px'
-                }}></i>
-                </button>
+                    <h1>G2</h1>
                 </div>
-                <div className='links'>
-                <button className='home-btn'>Home</button>
-                <button className='catego-btn'>Categories</button>
-                <button className='fav-btn'>Favourites</button>
-                <button className='exchange-btn'>Exchange</button>
-                <button className='order-btn'>My orders</button>
+                <div className='clear'>
+                    <button className='clear-btn' onClick={clearItem}>Clear</button>
                 </div>
             </div>
-            <div className='main'>
-                <Card/>
+            <div className='chat-box'>
+                <div className='greet'>
+                    <h2>What can I help with ?</h2>
+                </div>
+                <div className='translate'>
+                    <p>Try translating Garo to English</p>
+                </div>
+                <div className='dokbadale-seani'>
+                    <p>Try searching for Dokbadale seani</p>
+                </div>
+                <div className='katta-jikse'>
+                    <p>Try searching for Katta Jikse</p>
+                </div>
             </div>
-            <div className='footer'>
-                <p>&copy; Ches Thrift.</p>
+            <div className='input-fields'>
+                <form onSubmit={handleSubmit}>
+                    <input type='text' name='text' onChange={handleChange} className='text' placeholder='Type here to search...' required/>
+                    <button type='submit' className='submit-btn'>Go</button>
+                </form>
+                <div className='footer'>
+                    <p style={{textAlign: 'center'}}>&copy; G2 2025.</p>
+                </div>
+            </div>
             </div>
         </div>
         </>

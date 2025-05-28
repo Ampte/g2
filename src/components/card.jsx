@@ -5,44 +5,23 @@ const Card = () => {
         <>
         <div className='product-card'>
             <div className='card'>
-                <img src={"https://m.media-amazon.com/images/I/612W9n19MzL._SY695_.jpg"} className='product-image'/>
+                <img src='' alt='Product image'></img>
                 <p>Product name</p>
-                <p>Price</p>
+                <p>Product price</p>
             </div>
             <div className='card'>
-                <img src={"https://m.media-amazon.com/images/I/612W9n19MzL._SY695_.jpg"} className='product-image'/>
+                <img src='' alt='Product image'></img>
                 <p>Product name</p>
-                <p>Price</p>
-            </div>
-            
-        </div>
-        <div className='product-card'>
-            
-            <div className='card'>
-                <img src={"https://m.media-amazon.com/images/I/612W9n19MzL._SY695_.jpg"} className='product-image'/>
-                <p>Product name</p>
-                <p>Price</p>
+                <p>Product price</p>
             </div>
             <div className='card'>
-                <img src={"https://m.media-amazon.com/images/I/612W9n19MzL._SY695_.jpg"} className='product-image'/>
+                <img src='' alt='Product image'></img>
                 <p>Product name</p>
-                <p>Price</p>
-            </div>
-        </div>
-        <div className='product-card'>
-            
-            <div className='card'>
-                <img src={"https://m.media-amazon.com/images/I/612W9n19MzL._SY695_.jpg"} className='product-image'/>
-                <p>Product name</p>
-                <p>Price</p>
-            </div>
-            <div className='card'>
-                <img src={"https://m.media-amazon.com/images/I/612W9n19MzL._SY695_.jpg"} className='product-image'/>
-                <p>Product name</p>
-                <p>Price</p>
+                <p>Product price</p>
             </div>
         </div>
         </>
     );
 };
+
 export default Card;
