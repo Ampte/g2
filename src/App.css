@@ -27,6 +27,12 @@
 .menu-btn{
   padding: 10px;
   font-size: large;
+  border: none;
+  background-color: white;
+}
+
+.menu-btn:hover{
+  background-color: lightgrey;
 }
 
 .clear{
@@ -36,6 +42,12 @@
 .clear-btn{
   font-size: large;
   padding: 10px;
+  border: none;
+  background-color: white;
+}
+
+.clear-btn:hover{
+  background-color: lightgrey;
 }
 
 .greet{
@@ -87,7 +99,6 @@ form{
   padding: 10px;
   background-color: white;
   border: 1px solid lightgrey;
-  border-left: none;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -121,6 +132,10 @@ form{
   border-radius: 20px;
 }
 
+.footer{
+  display: none;
+}
+
 @media(min-width: 1000px){
   .body{
     display: grid;
@@ -141,5 +156,8 @@ form{
   .text{
     width: 65%;
     height: 50px;
+  }
+  .footer{
+    display: block;
   }
 }

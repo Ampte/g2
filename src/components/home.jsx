@@ -71,13 +71,13 @@ const Home = () => {
             <div className='center-content'>
             <div className='header'>
                 <div className='menu'>
-                    <button className='menu-btn'>|||</button>
+                    <button className='menu-btn'><i class="fa-solid fa-bars-staggered" style={{fontSize: "large"}}></i></button>
                 </div>
                 <div className='logo'>
                     <h1>G2</h1>
                 </div>
                 <div className='clear'>
-                    <button className='clear-btn' onClick={clearItem}>Clear</button>
+                    <button className='clear-btn' onClick={clearItem}><i class="fa-solid fa-eraser" style={{fontSize: "large"}}></i></button>
                 </div>
             </div>
             <div className='chat-box'>
@@ -97,7 +97,7 @@ const Home = () => {
             <div className='input-fields'>
                 <form onSubmit={handleSubmit}>
                     <input type='text' name='text' onChange={handleChange} className='text' placeholder='Type here to search...' required/>
-                    <button type='submit' className='submit-btn'>Go</button>
+                    <button type='submit' className='submit-btn'><i class="fa-solid fa-paper-plane" style={{fontSize: "large"}}></i></button>
                 </form>
                 <div className='footer'>
                     <p style={{textAlign: 'center'}}>&copy; G2 2025.</p>
