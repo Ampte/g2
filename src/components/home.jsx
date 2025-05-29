@@ -44,24 +44,8 @@ const Home = () => {
 
     }
 
-    const clearItem = () => {
-        const greetDiv = document.querySelector(".greet");
-        greetDiv.style.display = 'block';
-        const transDiv = document.querySelector(".translate");
-        transDiv.style.display = 'block';
-
-        const dokDiv = document.querySelector(".dokbadale-seani");
-        dokDiv.style.display = 'block';
-
-        const jikse = document.querySelector(".katta-jikse");
-        jikse.style.display = 'block';
-
-        const responseDiv = document.querySelector(".responseDiv");
-        responseDiv.style.display = 'none';
-
-        const chatBox = document.querySelector(".chat-box");
-        chatBox.style.display = 'none';
-
+    const clearPage = () => {
+        location.reload();
     }
     return(
         <>
@@ -77,7 +61,7 @@ const Home = () => {
                     <h1>G2</h1>
                 </div>
                 <div className='clear'>
-                    <button className='clear-btn' onClick={clearItem}><i class="fa-solid fa-eraser" style={{fontSize: "large"}}></i></button>
+                    <button className='clear-btn' onClick={clearPage}><i class="fa-solid fa-arrows-rotate" style={{fontSize: "large"}}></i></button>
                 </div>
             </div>
             <div className='chat-box'>
