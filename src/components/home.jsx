@@ -47,15 +47,29 @@ const Home = () => {
     const clearPage = () => {
         location.reload();
     }
+
+    const openSidebar = () => {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = 'block';
+    }
+
+    const closeSidebar = () => {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
+    }
     return(
         <>
         <div className='body'>
             <div className='left-side-content'></div>
             <div className='right-side-content'></div>
             <div className='center-content'>
+            <div className='sidebar'> 
+                <h1>Garo2</h1>
+                <button className='closeSidebar' onClick={closeSidebar}><i class="fa-solid fa-xmark" style={{fontSize:'large'}}></i></button>
+            </div>
             <div className='header'>
                 <div className='menu'>
-                    <button className='menu-btn'><i class="fa-solid fa-bars-staggered" style={{fontSize: "large"}}></i></button>
+                    <button className='menu-btn' onClick={openSidebar}><i class="fa-solid fa-bars-staggered" style={{fontSize: "large"}}></i></button>
                 </div>
                 <div className='logo'>
                     <h1>Garo2</h1>
