@@ -58,7 +58,7 @@ const Home = () => {
                     <button className='menu-btn'><i class="fa-solid fa-bars-staggered" style={{fontSize: "large"}}></i></button>
                 </div>
                 <div className='logo'>
-                    <h1>G2</h1>
+                    <h1>Garo2</h1>
                 </div>
                 <div className='clear'>
                     <button className='clear-btn' onClick={clearPage}><i class="fa-solid fa-arrows-rotate" style={{fontSize: "large"}}></i></button>
