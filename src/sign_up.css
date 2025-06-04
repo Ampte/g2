@@ -1,0 +1,50 @@
+.form-container{
+    margin: 50px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.user-form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user-first-name, .user-middle-name, .user-last-name, .user-email, .user-password, .user-confirm-password{
+    padding: 10px;
+    font-size: large;
+    margin: 10px;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid lightgrey;
+}
+
+.submit-user-details{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: lightgreen;
+    font-size: large;
+    width: 100%;
+}
+
+.ads{
+    display: none;
+}
+
+@media(min-width: 1000px){
+
+    .form-container{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .ads{
+        display: block;
+        border: 1px solid black;
+        width: 100%;
+        border-radius: 20px;
+    }
+}

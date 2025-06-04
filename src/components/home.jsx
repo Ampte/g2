@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '/src/App.css'
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+
+    const navigate = useNavigate();
+
+    const [userName, setUserName] = useState('');
 
     const [text, setText] = useState('');
 
@@ -31,18 +36,28 @@ const Home = () => {
 
         const responseDiv = document.createElement("div");
         responseDiv.className = 'responseDiv';
-        responseDiv.innerHTML = "Getting data.."
+        responseDiv.innerHTML = "..."
         
         chatBox.appendChild(textDiv);
         chatBox.appendChild(responseDiv);
         chatBox.scrollTop = chatBox.scrollHeight;
 
-        setTimeout(() => {
-            responseDiv.innerHTML = text;
-            setResponse(text);
-        }, 2000);
+        fetch(`http://localhost:3000/search?garo=${text}`)
+        .then((response) => response.json())
+        .then((data) => {
+            if(data.success){
+                setTimeout(() => {
+                    responseDiv.innerHTML = data.response;
+                }, 1000);
+            }else{
+                alert("NOT FOUND");
+            }
+        })
+        .catch((error) => {
+            alert("Network error");
+        });
 
-    }
+    };
 
     const clearPage = () => {
         location.reload();
@@ -57,6 +72,20 @@ const Home = () => {
         const sidebar = document.querySelector(".sidebar");
         sidebar.style.display = "none";
     }
+
+    const signUp = () => {
+        navigate('/sign_up');
+    };
+
+    useEffect(() => {
+        const firstName = localStorage.getItem("name")
+        if(!firstName){
+            setUserName("Sign Up");
+        }else{
+            setUserName(firstName);
+        };
+
+    }, [])
     return(
         <>
         <div className='body'>
@@ -64,8 +93,20 @@ const Home = () => {
             <div className='right-side-content'></div>
             <div className='center-content'>
             <div className='sidebar'> 
+            <div className='side-header'>
                 <h1>Garo2</h1>
                 <button className='closeSidebar' onClick={closeSidebar}><i class="fa-solid fa-xmark" style={{fontSize:'large'}}></i></button>
+                </div>
+                <div className='nav-links'>
+                    <ul>
+                        <li>About</li>
+                        <li>Feedback</li>
+                        <li>Contact</li>
+                    </ul>
+                    </div>
+                    <div className='user-container' onClick={signUp}>
+                        <p>{userName}</p>
+                    </div>
             </div>
             <div className='header'>
                 <div className='menu'>
@@ -93,7 +134,7 @@ const Home = () => {
                 </div>
             </div>
             <div className='input-fields'>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className='search-form'>
                     <input type='text' name='text' onChange={handleChange} className='text' placeholder='Type here to search...' required/>
                     <button type='submit' className='submit-btn'><i class="fa-solid fa-paper-plane" style={{fontSize: "large"}}></i></button>
                 </form>
