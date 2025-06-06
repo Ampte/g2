@@ -50,11 +50,11 @@ const Home = () => {
                     responseDiv.innerHTML = data.response;
                 }, 1000);
             }else{
-                alert("NOT FOUND");
+                alert("Not Found");
             }
         })
         .catch((error) => {
-            alert("Network error");
+            alert("Server Error");
         });
 
     };
